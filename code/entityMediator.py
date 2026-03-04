@@ -1,5 +1,8 @@
+from code.Const import WIN_WIDTH
 from code.enemy import Enemy
+from code.enemyShot import EnemyShot
 from code.entity import Entity
+from code.playerShot import PlayerShot
 
 
 class EntityMediator:
@@ -9,6 +12,14 @@ class EntityMediator:
         if isinstance(ent, Enemy):
             if ent.rect.right <0:
                 ent.health =0 #atribui 0 a vida de todas as entidades que saíram da janela
+
+        if isinstance(ent, PlayerShot):
+            if ent.rect.left >=WIN_WIDTH:
+                ent.health = 0
+
+        if isinstance(ent, EnemyShot):
+            if ent.rect.left <= 0:
+                ent.health = 0
 
 
 
