@@ -13,7 +13,7 @@ from code.Const import WIN_WIDTH, COLOR_ORANGE, MENU_OPTION, COLOR_WHITE, COLOR_
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./asset/MenuBg.png') #carregar imagem
+        self.surf = pygame.image.load('./asset/MenuBg.png').convert_alpha() #carregar imagem
         self.rect = self.surf.get_rect(left=0, top=0) #criar retangulo
 
 
