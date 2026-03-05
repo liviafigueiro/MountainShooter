@@ -7,7 +7,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_WIDTH, COLOR_ORANGE, MENU_OPTION, COLOR_WHITE, COLOR_YELLOW
+from code.Const import WIN_WIDTH, C_ORANGE, MENU_OPTION, C_WHITE, C_YELLOW
 
 
 class Menu:
@@ -21,18 +21,18 @@ class Menu:
     def run(self):
         menu_option = 0
         pygame.mixer.music.load('./asset/Menu.mp3')  # carregar a musica
-        pygame.mixer.music.play(-1)  # fazer a musica tocar, -1 deixa ela tocando infinita
+        pygame.mixer.music.play(-1)  # fazer a música tocar, -1 deixa ela tocando infinita
         while True:
             self.window.blit(source=self.surf, dest=self.rect)  # colocar imagem no retangulo
-            self.menu_text(65,"Mountain",COLOR_ORANGE,((WIN_WIDTH/2),70))
-            self.menu_text(65, "Shooter", COLOR_ORANGE, ((WIN_WIDTH / 2), 110))
+            self.menu_text(65,"Mountain", C_ORANGE, ((WIN_WIDTH / 2), 70))
+            self.menu_text(65, "Shooter", C_ORANGE, ((WIN_WIDTH / 2), 110))
 
             for i in range(len(MENU_OPTION)):
 
                 if i == menu_option:
-                    self.menu_text(25, MENU_OPTION[i], COLOR_YELLOW, ((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(25, MENU_OPTION[i], C_YELLOW, ((WIN_WIDTH / 2), 200 + 25 * i))
                 else:
-                    self.menu_text(25,MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 200+25*i))
+                    self.menu_text(25, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
                 #vai percorrer cada frase da lista e a cada posição somar 30 * o num da posição
 
 
