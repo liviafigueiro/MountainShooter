@@ -22,6 +22,7 @@ class Menu:
         menu_option = 0
         pygame.mixer.music.load('./asset/Menu.mp3')  # carregar a musica
         pygame.mixer.music.play(-1)  # fazer a música tocar, -1 deixa ela tocando infinita
+        pygame.mixer.music.set_volume(0.3)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)  # colocar imagem no retangulo
             self.menu_text(65,"Mountain", C_ORANGE, ((WIN_WIDTH / 2), 70))

@@ -27,9 +27,10 @@ class Score:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)  # colocar imagem no retangulo
             self.text(58, 'YOU  WIN!!', C_YELLOW, SCORE_POS['Title'])
+            text = 'Enter your name (4 characters): '
+            score = player_score[0]
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
-                text = 'Enter your name (4 characters): '
             if game_mode == MENU_OPTION[1]:
                 score =(player_score[0] + player_score[1])/2
                 text = 'Enter team name (4 characters): '
@@ -86,8 +87,7 @@ class Score:
                         return
 
             pygame.display.flip()
-            #self.menu_text(65, "Mountain", C_ORANGE, ((WIN_WIDTH / 2), 70))
-           # self.menu_text(65, "Shooter", C_ORANGE, ((WIN_WIDTH / 2), 110))
+
 
 
     def text (self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
